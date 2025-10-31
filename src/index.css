@@ -1,0 +1,447 @@
+/* Premium Full-Screen Web Application - Global Styles */
+
+/* Google Fonts Import for Premium Typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+/* CSS Custom Properties for Global Design System */
+:root {
+  /* Premium Typography */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Monaco, Inconsolata, 'Roboto Mono', monospace;
+  
+  /* Global Color Palette */
+  --color-primary: #667eea;
+  --color-secondary: #764ba2;
+  --color-accent: #f093fb;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+  
+  /* Dark Theme Colors */
+  --color-dark-bg: #0f1419;
+  --color-dark-surface: #1a1f2e;
+  --color-dark-elevated: #252b3b;
+  --color-dark-border: rgba(255, 255, 255, 0.1);
+  --color-dark-text: #ffffff;
+  --color-dark-text-secondary: #a0a6b8;
+  --color-dark-text-muted: #718096;
+  
+  /* Glass Morphism Effects */
+  --glass-background: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-hover: rgba(255, 255, 255, 0.08);
+  
+  /* Shadows & Effects */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 16px 40px rgba(0, 0, 0, 0.25);
+  
+  /* Smooth Transitions */
+  --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* Responsive Breakpoints */
+  --bp-mobile: 768px;
+  --bp-tablet: 1024px;
+  --bp-desktop: 1280px;
+  --bp-wide: 1600px;
+  
+  /* Z-Index Scale */
+  --z-dropdown: 1000;
+  --z-modal: 1100;
+  --z-popover: 1200;
+  --z-tooltip: 1300;
+  --z-toast: 1400;
+  
+  /* Border Radius System */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  
+  /* Spacing System */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  
+  /* Font Size System */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  
+  /* Typography Settings */
+  line-height: 1.6;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global Reset & Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: linear-gradient(135deg, var(--color-dark-bg) 0%, var(--color-dark-surface) 100%);
+  color: var(--color-dark-text);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Full-screen app container */
+#root {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Premium Typography Classes */
+.text-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.text-mono {
+  font-family: var(--font-mono);
+  font-feature-settings: 'liga' 0;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive Typography */
+.text-responsive {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.heading-responsive {
+  font-size: clamp(1.5rem, 5vw, 3.5rem);
+}
+
+/* Glass Morphism Components */
+.glass-surface {
+  background: var(--glass-background);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+}
+
+.glass-hover:hover {
+  background: var(--glass-hover);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Interactive Elements */
+.interactive {
+  cursor: pointer;
+  transition: var(--transition-normal);
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.interactive:hover {
+  transform: translateY(-2px);
+}
+
+.interactive:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Button System */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: var(--text-base);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  background: var(--glass-background);
+  color: var(--color-dark-text);
+  border: 1px solid var(--glass-border);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+.btn-secondary:hover {
+  background: var(--glass-hover);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Form Elements */
+.form-input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background: var(--glass-background);
+  border: 1px solid var(--color-dark-border);
+  border-radius: var(--radius-md);
+  color: var(--color-dark-text);
+  font-family: inherit;
+  font-size: var(--text-base);
+  transition: var(--transition-normal);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background: var(--glass-hover);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-input::placeholder {
+  color: var(--color-dark-text-muted);
+}
+
+/* Card Components */
+.card {
+  background: var(--glass-background);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  transition: var(--transition-normal);
+}
+
+.card:hover {
+  background: var(--glass-hover);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Loading States */
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--color-dark-border);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animated Background */
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.animated-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at 25% 25%,
+    var(--color-primary) 0%,
+    transparent 50%
+  ), radial-gradient(
+    circle at 75% 75%,
+    var(--color-secondary) 0%,
+    transparent 50%
+  ), radial-gradient(
+    circle at 50% 0%,
+    var(--color-accent) 0%,
+    transparent 40%
+  );
+  opacity: 0.03;
+  animation: float 20s ease-in-out infinite;
+  transform: translate(-25%, -25%);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(-25%, -25%) rotate(0deg);
+  }
+  50% {
+    transform: translate(-30%, -30%) rotate(180deg);
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--glass-background);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-dark-border);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Selection Styling */
+::selection {
+  background: rgba(102, 126, 234, 0.3);
+  color: var(--color-dark-text);
+}
+
+::-moz-selection {
+  background: rgba(102, 126, 234, 0.3);
+  color: var(--color-dark-text);
+}
+
+/* Focus Outline */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  :root {
+    --color-dark-border: rgba(255, 255, 255, 0.5);
+    --glass-background: rgba(255, 255, 255, 0.1);
+    --glass-hover: rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  :root {
+    --spacing-md: 0.75rem;
+    --spacing-lg: 1rem;
+    --spacing-xl: 1.5rem;
+  }
+  
+  .btn {
+    padding: 0.625rem 1.25rem;
+    font-size: var(--text-sm);
+  }
+  
+  .card {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --text-base: 0.9rem;
+    --text-lg: 1rem;
+    --text-xl: 1.125rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  .animated-background {
+    display: none !important;
+  }
+}
+
+/* High DPI Screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
